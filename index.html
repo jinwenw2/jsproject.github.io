@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>CountDeMoney</title>
+        <link rel="stylesheet" href="cover.css">
+        <script>
+            function initialize()
+            {
+                numberPennies = document.getElementById("pennies");
+                numberNickels = document.getElementById("nickels");
+                numberDimes = document.getElementById("dimes");
+                numberQuarters = document.getElementById("quarters");
+                collectionTotal = document.getElementById("total");
+                pennies= 0;
+                nickels = 0; 
+                dimes = 0; 
+                quarters = 0; 
+                sum = 0;
+                display();
+            }
+
+            function addPennies()
+            {
+                pennies += 1;
+                display();
+            }
+
+            function subtractPennies()
+            {
+                if (pennies != 0)
+                {
+                    pennies -= 1;
+                }
+                display();
+            }
+
+            function addNickels()
+            {
+                nickels += 1;
+                display();
+            }
+
+            function subtractNickels()
+            {
+                if (nickels != 0)
+                {
+                    nickels -= 1;
+                }
+                display();
+            }
+
+            function addDimes()
+            {
+                dimes += 1;
+                display();
+            }
+
+            function subtractDimes()
+            {
+                if (dimes != 0)
+                {
+                    dimes -= 1;
+                }
+                display();
+            }
+
+            function addQuarters()
+            {
+                quarters += 1;
+                display();
+            }
+
+            function subtractQuarters()
+            {
+                if (quarters != 0)
+                {
+                    quarters -= 1;
+                }
+                display();
+            }
+
+            function display()
+            {
+                numberPennies.innerHTML = pennies;
+                numberNickels.innerHTML = nickels;
+                numberDimes.innerHTML = dimes;
+                numberQuarters.innerHTML = quarters;
+                findtotal();
+                collectionTotal.innerHTML = sum;
+            }
+
+            function findtotal()
+            {
+                sum = (quarters * .25) + (dimes *.1) + (nickels *.05) + (pennies * .01);
+                sum = parseFloat(sum).toFixed(2);
+            }
+        </script>
+    </head>
+
+<body onload = "initialize();"> 
+    <h1>Number of Pennies:</h1>
+    <h1 id = "pennies">
+    </h1>
+    <h1>Number of Nickels:</h1>
+    <h1 id = "nickels">
+    </h1>
+    <h1>Number of Dimes:</h1>
+    <h1 id = "dimes">
+    </h1>
+    <h1>Number of Quarters:</h1>
+    <h1 id = "quarters">
+    </h1>
+    <hr />
+    <h1>Collection Total:</h1>
+    <h1 id = "total">
+    </h1>
+    <hr />
+    <div class = "button">
+        <button onclick = "addPennies();">Add a penny!</button>
+        <button onclick = "subtractPennies();">Subtract a penny!</button>
+        <br>
+        <br>
+        <button onclick = "addNickels();">Add a nickel!</button>
+        <button onclick = "subtractNickels();">Subtract a nickel!</button>
+        <br>
+        <br>
+        <button onclick = "addDimes();">Add a dime!</button>
+        <button onclick = "subtractDimes();">Subtract a dime!</button>
+        <br>
+        <br>
+        <button onclick = "addQuarters();">Add a quarter!</button>
+        <button onclick = "subtractQuarters();">Subtract a quarter!</button>
+    </div>
+
+
+</body>
+</html>
